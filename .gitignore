@@ -1,0 +1,12 @@
+# Analysis outputs (generated)
+outputs/
+
+# R session artifacts
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS/editor temp files
+.DS_Store
+Thumbs.db
+*.swp

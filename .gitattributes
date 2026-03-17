@@ -1,0 +1,7 @@
+# Normalize line endings to reduce cross-platform merge conflicts
+*.R text eol=lf
+*.r text eol=lf
+*.md text eol=lf
+
+# Spreadsheet data are binary, avoid text diffs/merges
+*.xlsx binary

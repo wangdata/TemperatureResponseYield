@@ -60,3 +60,20 @@ source("CH4 response to temperature claude wetland.r")
 
 - `brms`、`vip`、`fastshap` 被设为可选依赖；环境缺失时自动跳过，不影响主流程。
 - 空间预测中若某些因子型变量缺少全国覆盖栅格，当前版本采用常量占位，建议后续替换为真实土地利用/管理情景图层。
+
+
+## GitHub 合并建议（避免冲突）
+
+- 已新增 `.gitattributes`：统一 `R/Markdown` 为 LF 行尾，并将 `xlsx` 视为二进制，减少 GitHub 合并冲突概率。
+- 已新增 `.gitignore`：忽略 `outputs/` 等运行产物，避免把分析结果文件误提交后造成冲突。
+- 推荐合并流程（本地）：
+
+```bash
+git fetch origin
+git rebase origin/main
+# 若冲突，按提示解决后
+git add <resolved_files>
+git rebase --continue
+```
+
+如使用 PR 合并，请优先选择 **Rebase and merge**，可降低重复 merge commit 带来的冲突噪音。
